@@ -9,7 +9,7 @@ public class Weapon {
                 this.weaponDice = 12;
                 this.weaponDmg = 3;
                 this.weaponName = "Greataxe";
-            case "javelin":
+            case "Javelin":
                 this.weaponDice = 6;
                 this.weaponDmg = 3;
                 this.weaponName = "Javelin";

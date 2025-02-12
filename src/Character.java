@@ -39,19 +39,11 @@ public class Character {
     public void Attack (Character attacker, Character defender, int weapon){
         int attack = Roll_Dice(20) + attacker.strength;
         if (attack > defender.armourclass) {
-            defender.current_health -= Roll_Dice(attacker.getWeapons().get(weapon).getWeaponDice()) + attacker.getWeapons().get(weapon).getWeaponDmg();
+            defender.current_health -= Roll_Dice(attacker.weapons.get(weapon-1).getWeaponDice()) + attacker.weapons.get(weapon-1).getWeaponDmg();
         }
     }
 
-    public int getDexterity() {
-        return dexterity;
-    }
-
-    public ArrayList<Weapon> getWeapons() {
-        return weapons;
-    }
-
-    public String getName() {
-        return name;
+    public String getWeaponNames() {
+        return this.weapons.get(0).getWeaponName() + this.weapons.get(1).getWeaponName();
     }
 }

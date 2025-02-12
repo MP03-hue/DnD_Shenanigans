@@ -27,4 +27,6 @@ public class Weapon {
     public int getWeaponDmg() {
         return weaponDmg;
     }
+
+    public String getWeaponName(){return weaponName;}
 }

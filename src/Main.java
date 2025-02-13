@@ -42,7 +42,7 @@ public class Main {
         ArrayList<NonPlayableCharacter> enemylist = new ArrayList<>();
         NonPlayableCharacter enemy1 = new NonPlayableCharacter("Goblin", 15, 3, 11, 25, 3, -1, 0, 1, 1, true, "Javelin", "default");
         NonPlayableCharacter enemy2 = new NonPlayableCharacter("Merchant", 10, -1, 10, 25, 2, 0, 2, 3, 1, false, "default", "default");
-        NonPlayableCharacter enemy3 = new NonPlayableCharacter("Bugbear", 16, 2, 13, 25, 3, 2, -1, 1, 0, true, "Javelin", "Greataxe");
+        NonPlayableCharacter enemy3 = new NonPlayableCharacter("Bugbear", 16, 2, 13, 25, 3, 2, -1, 1, 0, true, "Javelin", "default");
         enemylist.add(enemy1);
         enemylist.add(enemy2);
         enemylist.add(enemy3);
@@ -57,7 +57,7 @@ public class Main {
         PlayableCharacter playercharacter = switch (scanner.nextLine()) {
             case "Olaf" -> new PlayableCharacter("Olaf", 12, 3, 17, 30, -1, 2, 0, 1, 2, "Greataxe", "Javelin");
             case "Ralf" -> new PlayableCharacter("Ralf", 13, 1, 14, 30, 0, -1, 1, 3, 1, "Javelin", "Dagger");
-            case "Georg:" -> new PlayableCharacter("Georg", 8, 1, 15, 25, -1, 2, 3, 2, 1, "Greataxe", "Javelin");
+            case "Georg" -> new PlayableCharacter("Georg", 8, 1, 15, 25, -1, 2, 3, 2, 1, "Greataxe", "Javelin");
             default -> new PlayableCharacter("Unbenannt", 0, 0, 0, 0, 0, 0, 0, 0, 0, "Dagger", "Dagger");
         };
 
@@ -92,10 +92,25 @@ public class Main {
     }
 
     public static int WeaponSelection(Character character){
-        System.out.println("Mit Welcher Waffe willst du Angreifen? 1 oder 2");
-        System.out.println(character.getWeaponNames());
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        System.out.println("Mit Welcher Waffe willst du Angreifen? [1] oder [2]");
 
+        int selection = 0;
+        boolean repeat = true;
+        while (repeat) {
+            try {
+                System.out.println(character.getWeaponNames());
+                Scanner scanner = new Scanner(System.in);
+                selection = scanner.nextInt();
+                if (selection >= 1 && selection <= 2) {
+                    repeat = false;
+                }
+
+            } catch (Exception e) {
+
+                System.out.println("Bitte [1] oder [2] eingeben.");
+
+            }
+        }
+        return selection;
     }
 }

@@ -40,11 +40,15 @@ public class Character implements IAngreifen {
         int attack = Roll_Dice(20) + attacker.strength;
         if (attack > defender.armourclass) {
             defender.current_health = defender.getCurrent_health() - (Roll_Dice((attacker.weapons.get(weapon - 1)).getWeaponDice()) + attacker.weapons.get(weapon -1).getWeaponDmg());
+            System.out.println(attacker.getName() + " hat " + defender.getName() + " getroffen!");
+        }
+        else {
+            System.out.println("Verfehlt!");
         }
     }
 
     public String getWeaponNames() {
-        return this.getWeapon(0).getWeaponName() + " " +  this.getWeapon(1).getWeaponName();
+        return this.getWeapon(0).getWeaponName() + " oder " +  this.getWeapon(1).getWeaponName();
     }
 
     public String getName() {

@@ -8,7 +8,7 @@ public class PlayableCharacter extends Character{
     }
 
     public NonPlayableCharacter Encounter(ArrayList<NonPlayableCharacter> enemylist){
-        NonPlayableCharacter enemy = enemylist.get((int)(Math.random() * (enemylist.size() + 1)));
+        NonPlayableCharacter enemy = enemylist.get((int)(Math.random() * (enemylist.size())));
         System.out.println(String.format("Du begegnest: " + enemy.getName()));
 
         return enemy;
@@ -16,7 +16,7 @@ public class PlayableCharacter extends Character{
     }
 
     public String winnersDance(){
-        return "Es wird ein beindruckender Tanz des Sieges Ausgeführt";
+        return "Es wird ein beeindruckender Tanz des Sieges Ausgeführt";
     }
 
     public void healing(Character player){

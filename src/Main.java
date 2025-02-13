@@ -4,7 +4,12 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+
         CharakterCreation();
+
+
+
 
     }
 
@@ -17,6 +22,12 @@ public class Main {
         switch (scanner.nextLine()){
             case "Olaf":
                 playercharacter = new PlayableCharacter("Olaf", 12, 3, 17, 30, -1, 2, 0, 1, 2, "Greataxe", "Javelin");
+                break;
+            case "Ralf":
+                playercharacter = new PlayableCharacter("Olaf", 13, 1, 14, 30, 0, -1, 1, 3, 1, "Javelin", "Dagger");
+                break;
+            case "Georg:":
+                playercharacter = new PlayableCharacter("Olaf", 8, 1, 15, 25, -1, 2, 3, 2, 1, "Greataxe", "Javelin");
                 break;
             default:
                 playercharacter = new PlayableCharacter("Unbenannt", 0,0,0,0,0,0,0,0,0,"Dagger","Dagger");

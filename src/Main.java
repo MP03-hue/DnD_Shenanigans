@@ -17,8 +17,11 @@ public class Main {
 
             if (enemy.isHostile()) {
                 Fight(playercharacter, enemy);
+
                 if (playercharacter.getCurrent_health() > 0){
                     System.out.println("Herzlichen Gückwunsch, du hast " + enemy.getName() + " besiegt.");
+
+
                 }
                 else {
                     System.out.println("Oh nein, du wurdest besiegt. GAME OVER");
@@ -27,7 +30,10 @@ public class Main {
             }
             else{
                 System.out.println(enemy.getName() + " winkt dir freundlich zu und geht weiter.");
+
             }
+            enemy.setCurrent_health(enemy.getMax_health());
+            playercharacter.healing(playercharacter);
         }
 
     }
@@ -79,6 +85,8 @@ public class Main {
                     fighter1.Attack(fighter1, fighter2, WeaponSelection(fighter1));
                 }
             }
+            System.out.println(fighter1.getName() + " hat " + fighter1.getCurrent_health() +" Leben");
+            System.out.println(fighter2.getName() +" hat " + fighter2.getCurrent_health() + " Leben");
         }
 
     }

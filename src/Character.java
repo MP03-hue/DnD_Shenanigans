@@ -44,7 +44,7 @@ public class Character implements IAngreifen {
     }
 
     public String getWeaponNames() {
-        return this.getWeapon(0).getWeaponName() + this.getWeapon(1).getWeaponName();
+        return this.getWeapon(0).getWeaponName() + " " +  this.getWeapon(1).getWeaponName();
     }
 
     public String getName() {
@@ -61,5 +61,12 @@ public class Character implements IAngreifen {
 
     public int getCurrent_health() {
         return current_health;
+    }
+    public int getMax_health(){
+        return max_health;
+    }
+
+    public void setCurrent_health(int new_health){
+        this.current_health = new_health;
     }
 }

@@ -9,7 +9,7 @@ public class PlayableCharacter extends Character{
 
     public NonPlayableCharacter Encounter(ArrayList<NonPlayableCharacter> enemylist){
         NonPlayableCharacter enemy = enemylist.get((int)(Math.random() * (enemylist.size() + 1)));
-        System.out.println(String.format("Du begegnest: ", enemy.getName()));
+        System.out.println(String.format("Du begegnest: " + enemy.getName()));
 
         return enemy;
 
@@ -19,5 +19,11 @@ public class PlayableCharacter extends Character{
         return "Es wird ein beindruckender Tanz des Sieges Ausgeführt";
     }
 
-
+    public void healing(Character player){
+        setCurrent_health(player.getCurrent_health() + 2);
+        if (player.getCurrent_health() > player.getMax_health()){
+            setCurrent_health(player.getMax_health());
+        }
+        System.out.println("Du hast jetzt " + player.getCurrent_health() + " Leben");
+    }
 }

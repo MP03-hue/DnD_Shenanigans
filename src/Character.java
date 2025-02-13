@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Character {
+public class Character implements IAngreifen {
 
     private String name;
     private int max_health;
@@ -28,8 +28,8 @@ public class Character {
         this.intelligence = intelligence;
         this.wisdom = wisdom;
         this.charisma = charisma;
-        //this.weapons.add(new Weapon(weapon1));
-        //this.weapons.add(new Weapon(weapon2));
+        this.weapons.add(new Weapon(weapon1));
+        this.weapons.add(new Weapon(weapon2));
     }
 
     public int Roll_Dice(int dice) {
@@ -39,7 +39,7 @@ public class Character {
     public void Attack (Character attacker, Character defender, int weapon){
         int attack = Roll_Dice(20) + attacker.strength;
         if (attack > defender.armourclass) {
-            defender.current_health -= Roll_Dice((attacker.weapons.get(weapon - 1)).getWeaponDice()) + attacker.weapons.get(weapon -1).getWeaponDmg();
+            defender.current_health = defender.getCurrent_health() - (Roll_Dice((attacker.weapons.get(weapon - 1)).getWeaponDice()) + attacker.weapons.get(weapon -1).getWeaponDmg());
         }
     }
 
@@ -57,5 +57,9 @@ public class Character {
 
     public Weapon getWeapon(int index) {
         return this.weapons.get(index);
+    }
+
+    public int getCurrent_health() {
+        return current_health;
     }
 }

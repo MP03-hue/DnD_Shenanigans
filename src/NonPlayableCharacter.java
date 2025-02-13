@@ -7,5 +7,7 @@ public class NonPlayableCharacter extends Character{
     }
 
 
-
+    public boolean isHostile() {
+        return hostile;
+    }
 }

@@ -28,8 +28,8 @@ public class Character {
         this.intelligence = intelligence;
         this.wisdom = wisdom;
         this.charisma = charisma;
-        //this.weapons.add(new Weapon(weapon1));
-        //this.weapons.add(new Weapon(weapon2));
+        this.weapons.add(new Weapon(weapon1));
+        this.weapons.add(new Weapon(weapon2));
     }
 
     public int Roll_Dice(int dice) {

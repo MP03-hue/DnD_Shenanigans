@@ -6,6 +6,8 @@ public class NonPlayableCharacter extends Character{
         this.hostile = hostile;
     }
 
-
+    public String evilLough(){
+        return "Du hörst die böse Lache von Dr. Doofenshmirtz";
+    }
 
 }

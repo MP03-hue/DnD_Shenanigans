@@ -4,4 +4,10 @@ public class PlayableCharacter extends Character{
          super(name, life, strength, armourclass, speed, dexterity, constitution, intelligence, wisdom, charisma, weapon1, weapon2);
 
     }
+
+    public String winnersDance(){
+        return "Es wird ein beindruckender Tanz des Sieges Ausgeführt";
+    }
+
+
 }

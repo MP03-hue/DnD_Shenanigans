@@ -14,4 +14,10 @@ public class PlayableCharacter extends Character{
         return enemy;
 
     }
+
+    public String winnersDance(){
+        return "Es wird ein beindruckender Tanz des Sieges Ausgeführt";
+    }
+
+
 }

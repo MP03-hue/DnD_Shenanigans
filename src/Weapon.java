@@ -3,6 +3,7 @@ public class Weapon {
     private int weaponDice;
     private String weaponName;
 
+    //Anschauen und mit Enums Lösen
     Weapon(String weaponType){
         switch (weaponType){
             case "Greataxe":

@@ -1,5 +1,4 @@
 public interface IAngreifen {
 
-    void Attack(Character attacker, Character defender, int weapon);
-
+    void attack(Character attacker, Character defender, int weapon);
 }
